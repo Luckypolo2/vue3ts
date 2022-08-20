@@ -1,4 +1,5 @@
 import { IApp } from "@/config/app";
+import { ITools } from "@/utils/tools";
 
 declare global {
     namespace GlobalType{
@@ -6,13 +7,16 @@ declare global {
         type IRecord = Record<IKey, any>
     }
     const app: IApp
+    const Tools: ITools
     interface Window {
-        app: IApp
+        app: IApp,
+        Tools: ITools // 全局公用方法
     }
 }
 declare module 'vue' {
     interface ComponentCustomProperties {
-        app: IApp
+        app: IApp,
+        Tools: ITools // 全局公用方法
     }
 }
 export {}

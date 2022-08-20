@@ -13,6 +13,7 @@ import { initApp } from "@/config/init";
     //TODO: 注册全局组件
     //TODO: 向根组件绑定全局对象
     uiApp.config.globalProperties.app = app
+    uiApp.config.globalProperties.Tools = Tools
     //TODO: 初始化路由管理并渲染根组件
     uiApp.mount('#app')
 })()
