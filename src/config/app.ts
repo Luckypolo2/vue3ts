@@ -1,4 +1,5 @@
 import sysCfg, {ISysCfg, ISysCfgBModItem} from "@/config/syscfg"
+import appCtl from "@/controller/AppCtl"
 const app = {
     // 接受换类型
     getConfig<T>(key: keyof ISysCfg): T{
@@ -8,7 +9,9 @@ const app = {
     checkBModIsEnable(stModuleName:string) {
         const bModName: ISysCfgBModItem[] = app.getConfig<ISysCfgBModItem[]>("bModeName")
         return !!bModName.find(item => item.name === stModuleName && item.enable);
-
+    },
+    getAppCtl() {
+        return appCtl
     }
 }
 // const result:boolean = app.checkBModIsEnable("blog")

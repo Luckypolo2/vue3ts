@@ -7,6 +7,8 @@
   <div>
     TEST123
     {{ app.getConfig('baseUrl') }}
+    {{lpk('Index')}}
+    {{lpk('Type', {index:1})}}
   </div>
 </template>
 

@@ -1,5 +1,6 @@
 import { IApp } from "@/config/app";
 import { ITools } from "@/utils/tools";
+import { IFnLpk} from "@/config/lpk";
 
 declare global {
     namespace GlobalType{
@@ -8,15 +9,18 @@ declare global {
     }
     const app: IApp
     const Tools: ITools
+    const lpk: IFnLpk
     interface Window {
         app: IApp,
-        Tools: ITools // 全局公用方法
+        Tools: ITools, // 全局公用方法
+        lpk: IFnLpk, // 全局语言包方法
     }
 }
 declare module 'vue' {
     interface ComponentCustomProperties {
         app: IApp,
-        Tools: ITools // 全局公用方法
+        Tools: ITools, // 全局公用方法
+        lpk: IFnLpk, // 全局语言包方法
     }
 }
 export {}
