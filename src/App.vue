@@ -5,7 +5,7 @@
 
 <template>
   <div>
-    TEST123
+    TEST123456
     {{ app.getConfig('baseUrl') }}
     {{lpk('Index')}}
     {{lpk('Type', {index:1})}}
