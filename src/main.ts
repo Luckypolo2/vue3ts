@@ -7,6 +7,8 @@ import { initApp } from "@/config/init";
 
 (async () => {
     //初始化系统基础配置信息
+    // 加载系统当前状态信息
+    // 加载当前登录用户个人信息
     await initApp()
     // 初始化UI组件
     const uiApp = createApp(App)
