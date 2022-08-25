@@ -3,7 +3,7 @@ import App from './App.vue'
 import 'normalize.css/normalize.css'
 import './assets/styles/global.scss'
 import './assets/foots/iconfont.css'
-import { initApp } from "@/config/init";
+import { initApp, initGlobalComponents } from "@/config/init";
 
 (async () => {
     //初始化系统基础配置信息
@@ -13,6 +13,7 @@ import { initApp } from "@/config/init";
     // 初始化UI组件
     const uiApp = createApp(App)
     //注册全局组件
+    initGlobalComponents(uiApp)
     //向根组件绑定全局对象
     uiApp.config.globalProperties.app = app
     uiApp.config.globalProperties.Tools = Tools

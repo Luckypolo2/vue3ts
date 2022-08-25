@@ -9,6 +9,8 @@
     {{ app.getConfig('baseUrl') }}
     {{lpk('Index')}}
     {{lpk('Type', {index:1})}}
+    <Icon icon="icon-time"></Icon>
+    <van-button type="success">主要按钮</van-button>
   </div>
 </template>
 

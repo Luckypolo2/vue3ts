@@ -1,5 +1,7 @@
 import {get} from 'lodash';
 import {LOCALE_OPTIONS} from "@/utils/Constans";
+import { Locale } from 'vant';
+import enUS from 'vant/es/locale/lang/en-US';
 
 const stLocaleStorageName = 'locale' // 存储语言环境字段名称
 const tblLpk:Record<string, string | string[]> = {} // 缓存语言包内容索引表
@@ -7,6 +9,16 @@ export const initLpk = () => {
     // 加载本地语言包内容
     // vite 自带方法
     mergeLpk(import.meta.glob('@/locales/*',{eager:true}))
+    initThirdUIpk()
+}
+// 初始化第三方语言包
+const initThirdUIpk = () => {
+    const tblThirdLpk:GlobalType.IRecord = {
+        'en-US': enUS
+    }
+    const stLocale = getLocale()
+    tblThirdLpk[stLocale] && (Locale.use(stLocale, tblThirdLpk[stLocale]))
+
 }
 // 返回当前语言包
 export const getLocale: ()=> string = () => {
