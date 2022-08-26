@@ -26,9 +26,9 @@
     width: 30%;
     padding: 30px 0;
     text-align: center;
-    @include fontSize('big-size');
-    @include bg();
-    @include color();
+    background-color: var(--primary-bg);
+    color: var(--primary-color);
+    font-size: var(--primary-size);
   }
 }
 </style>
