@@ -11,8 +11,24 @@
     {{lpk('Type', {index:1})}}
     <Icon icon="icon-time"></Icon>
     <van-button type="success">主要按钮</van-button>
+    <div class="theme">
+      <div class="theme-item" v-for="index in 3">{{index}}</div>
+    </div>
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+.theme{
+  display: flex;
+  justify-content: space-between;
+  .theme-item{
+    margin: 10px 20px;
+    width: 30%;
+    padding: 30px 0;
+    text-align: center;
+    @include fontSize('big-size');
+    @include bg();
+    @include color();
+  }
+}
 </style>

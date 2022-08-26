@@ -19,6 +19,7 @@ Object.keys(isGlobalVars).forEach(key => {
 export const initApp = async () => {
     // 初始化基础业务信息 如当前登录用户信息
     await initLoginUserInfo()
+    // 主题定制
     initLpk()
     // 初始化各业务模块
     const iAllEntry:GlobalType.IRecord = import.meta.glob('@/bmod/*/entry.ts',{eager: true})
