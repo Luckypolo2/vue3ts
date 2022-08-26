@@ -3,6 +3,7 @@ import app from "@/config/app";
 import Tools from "@/utils/tools";
 import {lpk, initLpk } from "@/config/lpk";
 import {initLoginUserInfo} from "@/controller/AppCtl";
+import {initTheme} from "@/config/theme";
 
 type IGlobalVarsKey = 'app' | 'lpk' | 'Tools' | 'Ajax'
 type IGlobalVars = {
@@ -19,6 +20,8 @@ Object.keys(isGlobalVars).forEach(key => {
 export const initApp = async () => {
     // 初始化基础业务信息 如当前登录用户信息
     await initLoginUserInfo()
+    initTheme()
+    // 主题定制
     initLpk()
     // 初始化各业务模块
     const iAllEntry:GlobalType.IRecord = import.meta.glob('@/bmod/*/entry.ts',{eager: true})
