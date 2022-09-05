@@ -7,6 +7,7 @@ import { initApp, initGlobalComponents } from "@/config/init";
 import '@/assets/styles/base-theme.scss'
 import '@/assets/styles/black-theme.scss'
 import '@/assets/styles/blue-theme.scss'
+import {initRoute} from "@/router";
 
 (async () => {
     //初始化系统基础配置信息
@@ -22,5 +23,6 @@ import '@/assets/styles/blue-theme.scss'
     uiApp.config.globalProperties.Tools = Tools
     uiApp.config.globalProperties.lpk = lpk
     //初始化路由管理并渲染根组件
-    uiApp.mount('#app')
+    // 配置路由及路由守卫
+    uiApp.use(initRoute()).mount('#app')
 })()
