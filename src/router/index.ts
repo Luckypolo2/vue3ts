@@ -30,9 +30,11 @@ export const initRoute:() => Router = () => {
                 {
                     path: '/my',
                     name: 'my',
-                    component: () => import('@/views/Index/My.vue'),
+                    component: () => import('@/views/My/My.vue'),
                     meta: {
                         title: lpk('page.my.Title'),
+                        keepAlive: false,
+                        requireAuth: false
                     }
                 }
             ]

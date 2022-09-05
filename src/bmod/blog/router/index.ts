@@ -4,14 +4,14 @@ import {ROUTER_VIEW_KEY} from "@/utils/Constans";
 export const initRoutes = () => {
     const stPath = `/${syscfg.module}`
     const giRoutes:RouteRecordRaw[] = [{
-        name:`${syscfg.module}Index`,
+        name:`BlogIndex`,
         path:stPath,
         meta:{
             title:lpk('Blog'),
             requireAuth:false,
-            belongToRouteViewKey: ROUTER_VIEW_KEY.Index,
+            belongToRouteViewKey: ROUTER_VIEW_KEY.Index
         },
-        component: ()=> import('../views/Index/Index.vue')
+        component: ()=> import('../views/Index/BlogIndex.vue')
     },{
         name: 'articleDetail',
         path: `${stPath}/article/detail/:id`,
