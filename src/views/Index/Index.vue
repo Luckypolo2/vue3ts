@@ -13,6 +13,9 @@
     <li>
       <router-link :to="{name:'my'}">{{lpk('page.my.Title')}}</router-link>
     </li>
+    <li>
+      <router-link :to="{name: 'blogIndex'}">{{lpk('Blog')}}</router-link>
+    </li>
   </ul>
 </div>
 </template>
