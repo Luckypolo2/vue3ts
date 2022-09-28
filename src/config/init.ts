@@ -4,6 +4,7 @@ import Tools from "@/utils/tools";
 import {lpk, initLpk } from "@/config/lpk";
 import {initLoginUserInfo} from "@/controller/AppCtl";
 import {initTheme} from "@/config/theme";
+import Ajax from "@/utils/Request";
 
 type IGlobalVarsKey = 'app' | 'lpk' | 'Tools' | 'Ajax'
 type IGlobalVars = {
@@ -12,8 +13,10 @@ type IGlobalVars = {
 const isGlobalVars: IGlobalVars = {
     app,
     Tools,
-    lpk
+    lpk,
+    Ajax
 }
+// window全局挂载
 Object.keys(isGlobalVars).forEach(key => {
     (window as any)[key as IGlobalVarsKey] = isGlobalVars[key as IGlobalVarsKey]
 })

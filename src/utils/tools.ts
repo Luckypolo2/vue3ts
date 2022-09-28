@@ -1,5 +1,15 @@
 import cookies from 'js-cookie'
+const fCachePreventRandom = Math.random() // 防止api缓存随机数
+let nCachePreventNum = 0
 const iTools = {
+    showLoadMask() {},
+    hideLoadMask() {},
+    // 防止api请求命中缓存
+    addCachePrevent(url:string=''):string {
+        const nQueryStringFlagIndex = url.indexOf('?')
+        url += (nQueryStringFlagIndex === -1 ? '?' : '&') + 'cp=' + (nCachePreventNum++) + fCachePreventRandom
+        return url
+    },
     Router: {},
     Store: {},
     LocalStorage: {
