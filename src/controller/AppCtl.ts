@@ -15,7 +15,12 @@ export default {
     getLoginUser():IUser {
         return iLoginUser
     },
+    clearLoginInfo() {
+        iLoginUser = {} as IUser
+        Tools.Cookie.removeItem(LOGIN_TOKEN)
+    },
     redirectToLogin() {
+        this.clearLoginInfo()
         document.location.href = LOGIN_PATH
     },
     changeLocale,

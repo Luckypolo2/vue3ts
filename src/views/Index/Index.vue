@@ -1,5 +1,13 @@
 <script lang="ts" setup>
 // NAME: Index
+import mdlUserApi from '@/api/UserApi'
+import {onMounted} from "vue";
+onMounted(async () => {
+  const iUser = await mdlUserApi.get({id: 1})
+  console.log('获取用户详情：', iUser)
+  const iUserList = await mdlUserApi.list({nPageSize:2})
+  console.log('获取用户列表：', iUserList)
+})
 </script>
 
 <template>

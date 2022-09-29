@@ -1,10 +1,9 @@
 import axios, {AxiosResponse} from "axios"
-import app from "@/config/app";
 import qs from "qs"
 import type {AxiosRequestConfig,AxiosInstance} from 'axios'
-import {LOGIN_TOKEN} from "@/utils/Constans";
+import {API_PATH, LOGIN_TOKEN} from "@/utils/Constans";
 import {get} from "lodash";
-import __ from "lodash/fp/__";
+import app from "@/config/app"
 // 定义类型
 export interface AxiosRequestConfigExt extends AxiosRequestConfig {
     reqParams?: AxiosRequestConfigExt
@@ -25,7 +24,7 @@ axios.defaults.headers.head['Content-Type'] = 'application/json;charset=utf-8'
 // 定义全局变量
 let timerLoading: ITimeout
 const axiosInstance:AxiosInstance = axios.create({
-    baseURL: app.getConfig('baseUrl'),
+    baseURL: API_PATH,
     timeout: 10000
 })
 
@@ -105,7 +104,7 @@ const Ajax = {
             },200)
         }
         // 是否需要防缓存
-        bIsNeedCachePrevent && (url = Tools.addCachePrevent(url))
+        (false !== bIsNeedCachePrevent) && (url = Tools.addCachePrevent(url))
         // 是否需要json处理
         bIsNeedJsonStringify && (params = JSON.stringify(params))
         // 是否需要qs处理
