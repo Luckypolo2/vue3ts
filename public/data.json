@@ -1,0 +1,19 @@
+{
+  "code": 200,
+  "data": {
+    "total": 100,
+    "items": [
+      {
+        "id": 1,
+        "name": "John",
+        "age": 20
+      },
+      {
+        "id": 2,
+        "name": "Mary",
+        "age": 21
+      }
+    ]
+  },
+  "message": "成功"
+}

@@ -20,6 +20,7 @@ const routeBModRoute:IBModRoutes = {
         giAllBModRoutes.push(mixRoute) // 不为数组则为单个则添加
     },
     getAllBModRoutes(): RouteRecordRaw[] {
+        console.log('giAllBModRoutes', giAllBModRoutes)
         return giAllBModRoutes
     }
 }

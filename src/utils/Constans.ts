@@ -1,4 +1,5 @@
 export const LOGIN_PATH = '/login' // 登录路径
+export const API_PATH = 'http://127.0.0.1:9999' // api路径
 export const LOGIN_TOKEN = 'token' // 登录token
 export const LOCALE_OPTIONS = ['zh-CN', 'en-US']
 export const THEME_OPTIONS = ['blue', 'black']
